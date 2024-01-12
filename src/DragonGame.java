@@ -36,7 +36,7 @@ public class DragonGame {
         } else if (playerChoice == 2) {
             runAway();
         } else {
-            System.out.println("Invalid choice. The dragon attacks you!");
+            System.out.println("\033[0;31mInvalid choice. The dragon attacks you!\033[0m");
             dragonAttack();
         }
     }
@@ -49,7 +49,7 @@ public class DragonGame {
         displayDragonStatus();
 
         if (dragonHealth <= 0) {
-            System.out.println("Congratulations! You defeated the dragon!");
+            System.out.println("\033[0;32mCongratulations! You defeated the dragon!\033[0m");
         } else {
             dragonAttack();
         }
@@ -61,18 +61,18 @@ public class DragonGame {
     }
 
     private void runAway() {
-        System.out.println("You run away from the dragon. Safe for now!");
+        System.out.println("\033[0;35mYou run away from the dragon. Safe for now!\033[0m");
     }
 
     private void dragonAttack() {
         int damage = new Random().nextInt(15) + 1;
         int rand = (int) (Math.random() * 10);
         if (rand < 5) {
-            System.out.println("You dodged the dragon's attack!");
+            System.out.println("\033[0;32mYou dodged the dragon's attack!\033[0m");
             displayDragonStatus();
             displayPlayerStatus();
         } else {
-            System.out.println("The dragon counterattacks and deals " + damage + " damage!");
+            System.out.println("\033[0;31mThe dragon counterattacks and deals " + damage + " damage!\033[0m");
             playerHealth -= damage;
             displayDragonStatus();
             displayPlayerStatus();
