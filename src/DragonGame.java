@@ -10,23 +10,23 @@ public class DragonGame {
     private Scanner scan;
 
     public static void introduceGame() {
-        System.out.println("Welcome to the Dragon Game!");
-        System.out.println("You find yourself in a dark cave...");
+        System.out.println("\033[0;33mWelcome to the Dragon Game!\033[0m");
+        System.out.println("\033[0;33mYou find yourself in a dark cave...\033[0m");
     }
 
     public static int chooseCave() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Which cave will you enter? (1 or 2)");
+        System.out.println("\033[0;33mWhich cave will you enter? (1 or 2)");
         return scanner.nextInt();
     }
 
 
 
     private void exploreCave(int chosenCave) {
-        System.out.println("You approach the cave...");
-        System.out.println("It's dark and spooky...");
-        System.out.println("A large dragon jumps out in front of you and opens its jaws wide.");
-        System.out.println("It breathes fire! What will you do? (1. Attack, 2. Run away)");
+        System.out.println("\033[0;34mYou approach the cave...\033[0m");
+        System.out.println("\033[0;34mIt's dark and spooky...\033[0m");
+        System.out.println("\033[0;34mA large dragon jumps out in front of you and opens its jaws wide.\033[0m");
+        System.out.println("\033[0;34mIt breathes fire! What will you do?\033[0m (1. Attack, 2. Run away)");
 
         Scanner scanner = new Scanner(System.in);
         int playerChoice = scanner.nextInt();
@@ -73,17 +73,18 @@ public class DragonGame {
             displayPlayerStatus();
         } else {
             System.out.println("The dragon counterattacks and deals " + damage + " damage!");
+            playerHealth -= damage;
             displayDragonStatus();
             displayPlayerStatus();
         }
     }
 
     private void displayDragonStatus() {
-        System.out.println("Dragon's Health: " + dragonHealth);
+        System.out.println("Dragon's Health: " + "\033[0;32m" + dragonHealth + "\033[0m");
     }
 
     private void displayPlayerStatus() {
-        System.out.println("Player's Health: " + playerHealth);
+        System.out.println("Player's Health: " + "\033[0;32m" + playerHealth + "\033[0m");
     }
 
     public void playGame(int health) {
