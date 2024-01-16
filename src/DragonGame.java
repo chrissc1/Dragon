@@ -69,14 +69,12 @@ public class DragonGame {
         int rand = (int) (Math.random() * 10);
         if (rand < 5) {
             System.out.println("\033[0;32mYou dodged the dragon's attack!\033[0m");
-            displayDragonStatus();
-            displayPlayerStatus();
         } else {
             System.out.println("\033[0;31mThe dragon counterattacks and deals " + damage + " damage!\033[0m");
             playerHealth -= damage;
-            displayDragonStatus();
-            displayPlayerStatus();
         }
+        displayDragonStatus();
+        displayPlayerStatus();
     }
 
     private void displayDragonStatus() {
